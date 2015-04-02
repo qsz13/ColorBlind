@@ -1,0 +1,9 @@
+﻿<Window x:Class="ColorBlind.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500.837" Width="756.381" WindowStyle="None"   AllowsTransparency="True">
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="358,326,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
