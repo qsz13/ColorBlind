@@ -72,8 +72,8 @@ namespace ColorBlind
                 deuteranopeMenuItem.Checked = false;
                 tritanopeMenuItem.Checked = false;
                 selectedType = TransType.protanope;
-                manager.setColorEffect(TransType.protanope);
-                manager.Toggle();
+                manager.setColorEffect(selectedType);
+               // manager.Toggle();
                 //manager.DoMagnifierApiInvoke();
             }
 
@@ -83,6 +83,7 @@ namespace ColorBlind
                 deuteranopeMenuItem.Checked = true;
                 tritanopeMenuItem.Checked = false;
                 selectedType = TransType.deuteranope;
+                manager.setColorEffect(selectedType);
               //  transformations.transform(selectedType);
             }
 
@@ -93,6 +94,7 @@ namespace ColorBlind
                 deuteranopeMenuItem.Checked = false;
                 tritanopeMenuItem.Checked = true;
                 selectedType = TransType.tritanope;
+                manager.setColorEffect(selectedType);
                 //transformations.transform(selectedType);
                 //manager.InvokeColorEffect(new ScreenColorEffect());
             }
