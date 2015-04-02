@@ -58,7 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Transformation.cs" />
+    <Compile Include="BuiltinMatrices.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="NativeStructures.cs" />
+    <Compile Include="TransformationManager.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

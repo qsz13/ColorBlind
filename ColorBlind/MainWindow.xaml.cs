@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace ColorBlind
 {
-
+    enum TransType { protanope, deuteranope, tritanope }
   
 
     /// <summary>
@@ -31,6 +31,10 @@ namespace ColorBlind
         private System.Windows.Forms.MenuItem protanopeMenuItem;    //红色盲
         private System.Windows.Forms.MenuItem deuteranopeMenuItem;  //绿色盲
         private System.Windows.Forms.MenuItem tritanopeMenuItem;   //蓝色盲
+        //private Transformation transformation = new Transformation();
+        private TransformationManager manager = new TransformationManager();
+        TransType selectedType;
+
 
         public MainWindow()
         {
@@ -38,6 +42,7 @@ namespace ColorBlind
             InitializeComponent();
             InitializeContextMenu();
             InitialTray();
+            manager.init();
         }
 
         private void InitializeContextMenu()
@@ -66,6 +71,10 @@ namespace ColorBlind
                 protanopeMenuItem.Checked = true;
                 deuteranopeMenuItem.Checked = false;
                 tritanopeMenuItem.Checked = false;
+                selectedType = TransType.protanope;
+                manager.setColorEffect(TransType.protanope);
+                manager.Toggle();
+                //manager.DoMagnifierApiInvoke();
             }
 
             else if(sender == deuteranopeMenuItem)
@@ -73,6 +82,8 @@ namespace ColorBlind
                 protanopeMenuItem.Checked = false;
                 deuteranopeMenuItem.Checked = true;
                 tritanopeMenuItem.Checked = false;
+                selectedType = TransType.deuteranope;
+              //  transformations.transform(selectedType);
             }
 
             else if(sender == tritanopeMenuItem)
@@ -81,8 +92,11 @@ namespace ColorBlind
                 protanopeMenuItem.Checked = false;
                 deuteranopeMenuItem.Checked = false;
                 tritanopeMenuItem.Checked = true;
+                selectedType = TransType.tritanope;
+                //transformations.transform(selectedType);
+                //manager.InvokeColorEffect(new ScreenColorEffect());
             }
-
+            
 
 
 
@@ -92,6 +106,7 @@ namespace ColorBlind
 
         protected void Exit_Click(Object sender, System.EventArgs e)
         {
+
             Close();
         }
         private void InitialTray()
@@ -105,7 +120,7 @@ namespace ColorBlind
 
         private void notifyIcon_Click(object Sender, EventArgs e)
         {
-           
+            manager.Toggle();
         }
 
 
