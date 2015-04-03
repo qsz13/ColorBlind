@@ -54,6 +54,7 @@ namespace ColorBlind
             deuteranopeMenuItem = new System.Windows.Forms.MenuItem("绿色盲", new System.EventHandler(Type_Click));
             tritanopeMenuItem = new System.Windows.Forms.MenuItem("蓝色盲", new System.EventHandler(Type_Click));
             protanopeMenuItem.RadioCheck = true;
+            protanopeMenuItem.Checked = true;
             deuteranopeMenuItem.RadioCheck = true;
             tritanopeMenuItem.RadioCheck = true;
             contextMenu.MenuItems.Add(protanopeMenuItem);
@@ -73,8 +74,7 @@ namespace ColorBlind
                 tritanopeMenuItem.Checked = false;
                 selectedType = TransType.protanope;
                 manager.setColorEffect(selectedType);
-               // manager.Toggle();
-                //manager.DoMagnifierApiInvoke();
+               
             }
 
             else if(sender == deuteranopeMenuItem)
@@ -84,7 +84,6 @@ namespace ColorBlind
                 tritanopeMenuItem.Checked = false;
                 selectedType = TransType.deuteranope;
                 manager.setColorEffect(selectedType);
-              //  transformations.transform(selectedType);
             }
 
             else if(sender == tritanopeMenuItem)
@@ -95,8 +94,7 @@ namespace ColorBlind
                 tritanopeMenuItem.Checked = true;
                 selectedType = TransType.tritanope;
                 manager.setColorEffect(selectedType);
-                //transformations.transform(selectedType);
-                //manager.InvokeColorEffect(new ScreenColorEffect());
+               
             }
             
 
@@ -117,12 +115,18 @@ namespace ColorBlind
             notifyIcon.Icon = ColorBlind.Properties.Resources.MainIcon;
             notifyIcon.Visible = true;
             notifyIcon.ContextMenu = contextMenu;
-            notifyIcon.Click += new System.EventHandler(this.notifyIcon_Click);
+            notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_Click);
+           // NotifyIcon
         }
 
-        private void notifyIcon_Click(object Sender, EventArgs e)
+        private void notifyIcon_Click(object Sender, System.Windows.Forms.MouseEventArgs e)
         {
-            manager.Toggle();
+            
+            
+            if(e.Button == MouseButtons.Left)
+            {
+                manager.Toggle();
+            }
         }
 
 
