@@ -48,8 +48,7 @@ namespace ColorBlind
         private void InitializeContextMenu()
         {
             this.contextMenu = new System.Windows.Forms.ContextMenu();
-            contextMenu.MenuItems.Add(
-                new System.Windows.Forms.MenuItem("退出", new System.EventHandler(Exit_Click)));
+            
             protanopeMenuItem = new System.Windows.Forms.MenuItem("红色盲", new System.EventHandler(Type_Click));
             deuteranopeMenuItem = new System.Windows.Forms.MenuItem("绿色盲", new System.EventHandler(Type_Click));
             tritanopeMenuItem = new System.Windows.Forms.MenuItem("蓝色盲", new System.EventHandler(Type_Click));
@@ -60,8 +59,23 @@ namespace ColorBlind
             contextMenu.MenuItems.Add(protanopeMenuItem);
             contextMenu.MenuItems.Add(deuteranopeMenuItem);
             contextMenu.MenuItems.Add(tritanopeMenuItem);
+
+            contextMenu.MenuItems.Add(
+                new System.Windows.Forms.MenuItem("隐藏", new System.EventHandler(Hide_Click)));
+
+
+            contextMenu.MenuItems.Add(
+                new System.Windows.Forms.MenuItem("退出", new System.EventHandler(Exit_Click)));
    
         }
+
+        private void Hide_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+
+
 
         protected void Type_Click(Object sender, System.EventArgs e)
         {
@@ -116,7 +130,15 @@ namespace ColorBlind
             notifyIcon.Visible = true;
             notifyIcon.ContextMenu = contextMenu;
             notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_Click);
-           // NotifyIcon
+            notifyIcon.DoubleClick += new EventHandler(this.notifyIcon_Double_Click);
+
+            
+            // NotifyIcon
+        }
+
+        private void notifyIcon_Double_Click(object sender, EventArgs e)
+        {
+            this.Show();
         }
 
         private void notifyIcon_Click(object Sender, System.Windows.Forms.MouseEventArgs e)
