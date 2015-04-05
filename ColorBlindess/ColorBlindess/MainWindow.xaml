@@ -1,0 +1,7 @@
+﻿<NavigationWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ColorBlindess.MainWindow"
+        Title="色盲色弱辩色辅助软件" Height="380" Width="540" ShowsNavigationUI="False" Source="HomePage.xaml">
+  
+</NavigationWindow>

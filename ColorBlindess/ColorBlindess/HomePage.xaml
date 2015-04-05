@@ -1,0 +1,38 @@
+﻿<Page x:Class="ColorBlindess.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="520"
+	Title="HomePage">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="UI/background.jpg"/>
+        </Grid.Background>
+
+        <Label Content="色盲色弱辩色辅助"  FontSize="32" Name="name" FontWeight="Bold" Foreground="#FFBDBDBD" />
+
+        <Button Content="提交" Name="Test" Click="Test_Click" Height="94" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.454" Margin="61,98,73,0" >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentControl Name="bl">
+                        <Image Source="UI/test.png">
+                        </Image>
+                    </ContentControl>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button  Name="Choose" Click="Choose_Click" Height="94" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.454" Margin="65,217,69,0"   >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentControl Name="bl">
+                        <Image Source="UI/choose.png" Margin="0,0,10,0">
+                        </Image>
+                    </ContentControl>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Page>

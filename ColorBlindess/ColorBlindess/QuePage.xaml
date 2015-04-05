@@ -1,0 +1,58 @@
+﻿<Page x:Class="ColorBlindess.QuePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="520"
+	Title="QuePage">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="UI/background.jpg"/>
+        </Grid.Background>
+        <Label Content="请指出图示内容" Margin="276,27,0,0"  FontSize="28" FontWeight="Bold" Foreground="#FFBDBDBD" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="211"></Label>
+        <Label  Margin="373,113,33,171"  FontSize="18" FontWeight="Bold" Foreground="#FFBDBDBD">
+            <TextBlock TextWrapping="Wrap" Text="A" Name="AChoice"></TextBlock>
+        </Label>
+        <Label  Margin="373,195,33,89"  FontSize="18" FontWeight="Bold" Foreground="#FFBDBDBD">
+            <TextBlock TextWrapping="Wrap" Text="B" Name="BChoice" ></TextBlock>
+        </Label>
+        <Label  Margin="373,278,33,10"  FontSize="18" FontWeight="Bold" Foreground="#FFBDBDBD">
+            <TextBlock TextWrapping="Wrap" Text="C" Name="CChoice"></TextBlock>
+        </Label>
+        <Image Name="img" Source="UI/red1.jpg" Margin="0,0,280,0"></Image>
+        <Button  Name="ChooseA" Click="ChooseA_Click" Height="47" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.509" Margin="292,103,178,0"     >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentControl Name="bl">
+                        <Image Source="UI/A.png" Margin="0">
+                        </Image>
+                    </ContentControl>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button  Name="ChooseB" Click="ChooseB_Click" Height="47" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.509" Margin="292,185,178,0"     >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentControl Name="bl">
+                        <Image Source="UI/B.png" Margin="0">
+                        </Image>
+                    </ContentControl>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button  Name="ChooseC" Click="ChooseA_Click" Height="47" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.509" Margin="292,269,178,0"     >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentControl Name="bl">
+                        <Image Source="UI/C.png" Margin="0">
+                        </Image>
+                    </ContentControl>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+
+
+</Page>
